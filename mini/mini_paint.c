@@ -139,11 +139,11 @@ int	main(int ac, char **av)
 	if (ac != 2)
 		return (errore("argument"));
 	if (!(stream = fopen(av[1], "r")))
-		return (errore("Operation file corrupted."));
+		return (errore("Operation file corrupted"));
 	if (getBG(stream, &bg) == 1)
-		return (errore("Operation file corrupted."));
+		return (errore("Operation file corrupted"));
 	if (draw(stream, bg) == 1)
-		return (errore("Operation file corrupted."));
+		return (errore("Operation file corrupted"));
 	fclose(stream);
 	return (0);
 }
