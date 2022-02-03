@@ -79,6 +79,7 @@ int	setBG(char **canv, t_bg bg)
 			return (1);
 		memset(canv[i], bg.bgc, bg.w);
 	}
+	return (0);
 }
 //isCircle
 int	isCircle(int x, int y, t_draw draw)
