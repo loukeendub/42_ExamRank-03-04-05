@@ -72,12 +72,14 @@ int	setBG(char **canv, t_bg bg)
 	for (int i = 0; i <= bg.h; i++)
 	{
 		if (i == bg.h)
+		{
 			canv[i] = 0;
+			return (0);
+		}
 		else if (!(canv[i] = calloc(1, (bg.w + 1))))
 			return (1);
 		memset(canv[i], bg.bgc, bg.w);
 	}
-	return (0);
 }
 //isRect
 int	isRect(int x, int y, t_draw draw)
