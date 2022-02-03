@@ -70,11 +70,11 @@ int	setBG(char **canv, t_bg bg)
 		return (1);
 	for (int i = 0; i <= bg.h; i++)
 	{
-		if (!(canv[i] = calloc(1, (bg.w + 1))))
-			return (1);
-		memset(canv[i], bg.bgc, bg.w);
 		if (i == bg.h)
 			canv[i] = 0;
+		else if (!(canv[i] = calloc(1, (bg.w + 1))))
+			return (1);
+		memset(canv[i], bg.bgc, bg.w);
 	}
 	return (0);
 }
