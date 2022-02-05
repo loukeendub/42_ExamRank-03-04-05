@@ -75,7 +75,7 @@ int	setBG(char **canv, t_bg bg)
 			canv[i] = 0;
 			return (0);
 		}
-		else if (!(canv[i] = calloc(1, (bg.w + 1))))
+		if (!(canv[i] = calloc(1, (bg.w + 1))))
 			return (1);
 		memset(canv[i], bg.bgc, bg.w);
 	}
@@ -123,7 +123,7 @@ int	draw(FILE *stream, t_bg bg)
 	draw.type = 0;
 	while ((ret = fscanf(stream, "\n%c %f %f %f %c", &draw.type, &draw.x, &draw.y, &draw.rad, &draw.cc)) == 5)
 	{
-		if ((draw.type != 'C' && draw.type != 'c') || draw.rad == 0.0 || draw.cc == 0 || draw.cc == '\n')
+		if ((draw.type != 'C' && draw.type != 'c') || draw.rad <= 0.0 || draw.cc == 0 || draw.cc == '\n')
 			return (freeMatrix(canv, 1));
 		setCircle(canv, draw, bg);
 		draw.type = 0;
