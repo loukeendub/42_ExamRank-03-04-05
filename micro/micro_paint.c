@@ -76,7 +76,7 @@ int	setBG(char **canv, t_bg bg)
 			canv[i] = 0;
 			return (0);
 		}
-		else if (!(canv[i] = calloc(1, (bg.w + 1))))
+		if (!(canv[i] = calloc(1, (bg.w + 1))))
 			return (1);
 		memset(canv[i], bg.bgc, bg.w);
 	}
